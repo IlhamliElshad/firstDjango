@@ -1,13 +1,9 @@
 from django.shortcuts import render,HttpResponse
-
+from books.models import Book
 # Create your views here.
 
 def book(request):
     context = {
-        "user1": "imran",
-        "user2": "elshad",
-        "user3": "orxan",
-        "user4": "ilkin"
-        
+        "books":Book.objects.all() # butun bu modelin obyektlerini getirir
     }
     return render(request,"index.html",context)

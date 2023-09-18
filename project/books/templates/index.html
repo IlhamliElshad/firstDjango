@@ -7,10 +7,16 @@
 </head>
 <body>
 
-    <h1>{{user1}}</h1>
-    <h1>{{user2}}</h1>
-    <h1>{{user3}}</h1>
-    <h1>{{user4}}</h1>
+    {% for book in books %}
 
+    <h1>{{book.id}} {{book.name}}  {{book.price}}</h1>
+
+    {% if book.image %}
+        <img src="{{book.image.url}}" alt="" style="height: 100px;">
+    {% endif %}
+    <hr>
+
+    {% endfor %}
+    
 </body>
 </html>
